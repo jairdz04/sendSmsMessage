@@ -11,6 +11,9 @@ app.use(bodyParser.json());
 //load method to send message
 const subscribe = require("./subscribe").send;
 app.post("/send", subscribe);
+app.get("/test", (req, res)=>{
+    res.json({detalle: "esta es una prueba"})
+});
 
 app.listen(port, ()=>{  
     console.log("Server listening on port", port);
