@@ -18,7 +18,7 @@ exports.send = (req,res) =>{
             };
 
             client.setEndpoint(MESSAGE_URL);
-            client.setSecurity(new soap.BasicAuthSecurity( SERVICE_KEY, SERVICE_PAS|SWORD));
+            client.setSecurity(new soap.BasicAuthSecurity( SERVICE_KEY, SERVICE_PASSWORD));
             client.sendMessage(data, (err, result) =>{
                 if(err) return res.status(400).json(err);
                 return res.status(200).json({exito: "mensaje enviado correctamente", informacion: result});
