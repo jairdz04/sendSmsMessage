@@ -3,7 +3,7 @@ const { MESSAGE_URL, SERVICE_KEY, SERVICE_PASSWORD, SENDER, RECIEPT_REQUEST, DAT
 
 exports.send = (req,res) =>{
     try {
-        console.log(req.body);
+
         const { subscriber, message, requestId } = req.body;
         soap.createClient(MESSAGE_URL, (err, client) =>{
             if(err) throw new Error(err);
